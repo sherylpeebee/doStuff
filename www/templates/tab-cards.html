@@ -8,8 +8,8 @@
     <button class="button button-small button-assertive" ng-click='logout()'>
       logout
     </button>
-    <h1>Ionic Cards</h1>
-    <div class="card-container" >
+    
+    <!-- <div class="card-container" >
       <div class="card list" ng-class="card{{$index}}" ng-repeat="x in ['This is a basic Card which contains an item that has wrapping text.','another card','yet another','some fascinating stuff','and still more'].slice().reverse() track by $index">
         <div class="item item-body">
           {{x}}
@@ -28,17 +28,39 @@
 
         </div>
       </div>
-    </div>
+    </div> -->
 
     <ul class="stack" swing-stack swing-options="options">
+      <li class="card list" swing-card
+        ng-repeat="x in ['This is a basic Card which contains an item that has wrapping text.','another card','yet another','some fascinating stuff','and still more'].slice().reverse() track by $index"
+
+        swing-on-throwoutleft="throwoutleft(eventName, eventObject, $index)"
+        swing-on-throwoutright="throwoutright(eventName, eventObject, $index)">
+
+        <div class="item item-body">
+          {{x}}
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#">
+            <i class="icon ion-thumbsup"></i>
+            Like
+          </a>
+          <a class="tab-item" href="#">
+            <i class="icon ion-thumbsdown"></i>
+            Pass
+          </a>
+        </div>
+      </li>
+   </ul>
+
+    <!-- <ul class="stack" swing-stack >
        <li swing-card
          ng-repeat="card in cards track by $index" ng-class="card.name"
          swing-on-throwoutleft="throwoutleft(eventName, eventObject, $index)"
          swing-on-throwoutright="throwoutright(eventName, eventObject, $index)">
          {{card.symbol}}
        </li>
-   </ul>
-
-
+    </ul> -->
   </ion-content>
 </ion-view>

@@ -1,68 +1,30 @@
 /* Empty. Add your own CSS if you like */
 .card {
-    padding-top: 1px;
-    padding-bottom: 1px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    position: absolute;
-    width: 100%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  width: 100%;
 }
-button, input, code {
-  display: inline-block;
-  outline: none;
-  font: inherit;
-  border: none;
-  background: #FDE991;
-  padding: 0; }
-
-button {
-  color: #C7433E;
-  cursor: pointer; }
-
-input {
-  width: 50px; }
-
-
-    .stack {
-    width: 200px;
-    height: 300px;
-    background: #ED5D52;
-    position: absolute;
-    top: 250px;
-    left: 50%;
-    margin-left: -100px;
-    border-radius: 10px; }
-    li {
-    width: 200px;
-    height: 300px;
-    list-style: none;
-    background: #fff;
-    border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
-    line-height: 300px;
-    text-align: center;
-    font-size: 100px;
-    border: 10px solid #ECECEC;
-    box-sizing: border-box;
-    cursor: default;
-  }
-      li.clubs,   li.spades {
-      color: #373737;
-    }
-      li.diamonds,   li.hearts {
-      color: #ED5D52;
-    }
-      /*li.in-deck:nth-child(3) {
-      top: 2px;
-      transform: translate(2px, 2px) rotate(0.4deg); }
-      li.in-deck:nth-child(2) {
-      top: 4px;
-      transform: translate(-4px, -2px) rotate(-1deg); }*/
-
-button:active {
-        background: #63211F;
-        color: #FFFFFF;
-        bottom: -2px;
-        box-shadow: none; }
+.stack {
+  width: 50%;
+  position: absolute;
+  top: 150px;
+  left: 35%;
+  margin-left: -100px;
+  border-radius: 10px;
+}
+li {
+  width: 50%;
+  list-style: none;
+  background: #fff;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
+  line-height: 300px;
+  text-align: center;
+  font-size: 100px;
+  border: 10px solid #ECECEC;
+  cursor: default;
+}

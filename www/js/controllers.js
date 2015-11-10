@@ -2,12 +2,6 @@ angular.module('starter.controllers', [])
 
 .controller('CardCtrl', function($scope, ezfb, $window, $location) {
 
-  $scope.cards = [
-              {name: 'clubs', symbol: '♣'},
-              {name: 'diamonds', symbol: '♦'},
-              {name: 'hearts', symbol: '♥'},
-              {name: 'spades', symbol: '♠'}
-          ];
 
           $scope.throwoutleft = function (eventName, eventObject, index) {
               console.log('throwoutleft', eventObject, index);
