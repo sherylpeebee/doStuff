@@ -11,12 +11,15 @@ angular.module('starter.controllers', [])
 
           $scope.throwoutleft = function (eventName, eventObject, index) {
               console.log('throwoutleft', eventObject, index);
-              $scope.cards.splice(index, 1);
+              var objectToDestroy = eventObject.target;
+              angular.element(objectToDestroy).remove();
+
           };
 
           $scope.throwoutright = function (eventName, eventObject, index) {
               console.log('throwoutright', eventObject, index);
-              $scope.cards.splice(index, 1);
+              var objectToDestroy = eventObject.target;
+              angular.element(objectToDestroy).remove();
           };
 
   $scope.login = function () {

@@ -30,17 +30,13 @@
       </div>
     </div>
 
-
     <ul class="stack" swing-stack swing-options="options">
-       <li
-           swing-card
-           ng-repeat="card in cards track by $index" ng-class="card.name"
-           swing-on-throwoutleft="throwoutleft(eventName, eventObject, $index)"
-           swing-on-throwoutright="throwoutright(eventName, eventObject, $index)"
-           swing-on-throwin="throwin(eventName, eventObject)"
-           swing-on-dragstart="dragstart(eventName, eventObject)"
-           swing-on-dragmove="dragmove(eventName, eventObject)"
-           swing-on-dragend="dragend(eventName, eventObject)">{{card.symbol}}</li>
+       <li swing-card
+         ng-repeat="card in cards track by $index" ng-class="card.name"
+         swing-on-throwoutleft="throwoutleft(eventName, eventObject, $index)"
+         swing-on-throwoutright="throwoutright(eventName, eventObject, $index)">
+         {{card.symbol}}
+       </li>
    </ul>
 
 

@@ -46,44 +46,23 @@ input {
     font-size: 100px;
     border: 10px solid #ECECEC;
     box-sizing: border-box;
-    cursor: default; }
+    cursor: default;
+  }
       li.clubs,   li.spades {
-      color: #373737; }
+      color: #373737;
+    }
       li.diamonds,   li.hearts {
-      color: #ED5D52; }
-      li.in-deck:nth-child(3) {
+      color: #ED5D52;
+    }
+      /*li.in-deck:nth-child(3) {
       top: 2px;
       transform: translate(2px, 2px) rotate(0.4deg); }
       li.in-deck:nth-child(2) {
       top: 4px;
-      transform: translate(-4px, -2px) rotate(-1deg); }
-    #control {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    font-size: 0; }
-  button {
-      background: #FFFFFF;
-      color: #373737;
-      font-weight: bold;
-      border: none;
-      font: normal 18px/24px 'Helvetica Neue', Helvetica, Arial, freesans, sans-serif;
-      margin: 0 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-      box-shadow: 0 2px 0 #63211F;
-      outline: none;
-      position: relative; }
+      transform: translate(-4px, -2px) rotate(-1deg); }*/
+
 button:active {
         background: #63211F;
         color: #FFFFFF;
         bottom: -2px;
         box-shadow: none; }
-
-#source {
-  width: 500px;
-  margin: 20px auto; }
-  #source a {
-    color: #C7433E; }
