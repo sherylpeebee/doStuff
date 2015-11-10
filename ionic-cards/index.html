@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <script src="http://code.ionicframework.com/1.1.1/js/ionic.bundle.js"></script>
+    <script src="http://rawgit.com/angular-ui/ui-router/0.2.15/release/angular-ui-router.js"></script>
+    <link data-require="ionic@*" data-semver="1.0.0-rc.2" rel="stylesheet" href="http://code.ionicframework.com/1.0.0-rc.2/css/ionic.css" />
+
+
+
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-app="Cards" ng-controller="MainCtrl">
+    <ion-content padding="true">
+      <h1>Ionic Cards</h1>
+      <div class="card-container" >
+        <div class="card list" ng-class="card{{$index}}" ng-repeat="x in ['This is a basic Card which contains an item that has wrapping text.','another card','yet another','some fascinating stuff','and still more'].slice().reverse() track by $index">
+          <div class="item item-body">
+            {{x}}
+          </div>
+          <div class="item tabs tabs-secondary tabs-icon-left">
+            <a class="tab-item" href="#">
+              <i class="icon ion-thumbsup"></i>
+
+              Like
+            </a>
+            <a class="tab-item" href="#">
+              <i class="icon ion-thumbsdown"></i>
+
+              Pass
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </body>
+
+</html>

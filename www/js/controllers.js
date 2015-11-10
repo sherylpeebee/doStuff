@@ -1,6 +1,24 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, ezfb, $window, $location) {
+.controller('CardCtrl', function($scope, ezfb, $window, $location) {
+
+  $scope.cards = [
+              {name: 'clubs', symbol: '♣'},
+              {name: 'diamonds', symbol: '♦'},
+              {name: 'hearts', symbol: '♥'},
+              {name: 'spades', symbol: '♠'}
+          ];
+
+          $scope.throwoutleft = function (eventName, eventObject, index) {
+              console.log('throwoutleft', eventObject, index);
+              $scope.cards.splice(index, 1);
+          };
+
+          $scope.throwoutright = function (eventName, eventObject, index) {
+              console.log('throwoutright', eventObject, index);
+              $scope.cards.splice(index, 1);
+          };
+
   $scope.login = function () {
     FB.login(function (res) {
       console.log(res);
