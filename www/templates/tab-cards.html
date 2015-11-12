@@ -8,7 +8,7 @@
     <button class="button button-small button-assertive" ng-click='logout()'>
       logout
     </button>
-    
+
     <!-- <div class="card-container" >
       <div class="card list" ng-class="card{{$index}}" ng-repeat="x in ['This is a basic Card which contains an item that has wrapping text.','another card','yet another','some fascinating stuff','and still more'].slice().reverse() track by $index">
         <div class="item item-body">
@@ -30,12 +30,13 @@
       </div>
     </div> -->
 
-    <ul class="stack" swing-stack swing-options="options">
+    <ul class="stack" swing-stack data-tap-disable="true" >
       <li class="card list" swing-card
+        data-tap-disable="true"
+        ng-click="stabilize($event)"
         ng-repeat="x in ['This is a basic Card which contains an item that has wrapping text.','another card','yet another','some fascinating stuff','and still more'].slice().reverse() track by $index"
-
-        swing-on-throwoutleft="throwoutleft(eventName, eventObject, $index)"
-        swing-on-throwoutright="throwoutright(eventName, eventObject, $index)">
+        swing-on-throwoutleft="throwoutleft(eventName, eventObject)"
+        swing-on-throwoutright="throwoutright(eventName, eventObject)">
 
         <div class="item item-body">
           {{x}}

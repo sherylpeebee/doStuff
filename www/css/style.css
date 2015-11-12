@@ -1,30 +1,24 @@
-/* Empty. Add your own CSS if you like */
 .card {
   padding-top: 1px;
   padding-bottom: 1px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   position: absolute;
   width: 100%;
+
 }
 .stack {
-  width: 50%;
-  position: absolute;
-  top: 150px;
-  left: 35%;
-  margin-left: -100px;
   border-radius: 10px;
 }
 li {
   width: 50%;
+  /*height: 100%;*/
   list-style: none;
   background: #fff;
   border-radius: 5px;
-  top: 0;
+  top: 15;
   left: 0;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2), 1px 1px 1px rgba(0, 0, 0, 0.2);
-  line-height: 300px;
-  text-align: center;
   font-size: 100px;
-  border: 10px solid #ECECEC;
+  border: 5px solid #ECECEC;
   cursor: default;
 }

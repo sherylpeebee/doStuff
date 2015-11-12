@@ -1945,7 +1945,7 @@ inherit(SwipeRecognizer, AttrRecognizer, {
 });
 
 /**
- * A tap is ecognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
+ * A tap is recognized when the pointer is doing a small tap/click. Multiple taps are recognized if they occur
  * between the given interval and position. The delay option can be used to recognize multi-taps without firing
  * a single tap.
  *
@@ -2130,8 +2130,8 @@ Hammer.defaults = {
         [PinchRecognizer, { enable: false }, ['rotate']],
         [SwipeRecognizer,{ direction: DIRECTION_HORIZONTAL }],
         [PanRecognizer, { direction: DIRECTION_HORIZONTAL }, ['swipe']],
-        [TapRecognizer],
-        [TapRecognizer, { event: 'doubletap', taps: 2 }, ['tap']],
+        // [TapRecognizer],
+        // [TapRecognizer, { event: 'doubletap', taps: 2 }, ['tap']],
         [PressRecognizer]
     ],
 
@@ -2184,7 +2184,7 @@ Hammer.defaults = {
          * @type {String}
          * @default 'rgba(0,0,0,0)'
          */
-        tapHighlightColor: 'rgba(0,0,0,0)'
+        // tapHighlightColor: 'rgba(0,0,0,0)'
     }
 };
 
@@ -2504,7 +2504,7 @@ extend(Hammer, {
 
     Recognizer: Recognizer,
     AttrRecognizer: AttrRecognizer,
-    Tap: TapRecognizer,
+    // Tap: TapRecognizer,
     Pan: PanRecognizer,
     Swipe: SwipeRecognizer,
     Pinch: PinchRecognizer,
@@ -6211,7 +6211,7 @@ Card = function (stack, targetElement) {
         eventEmitter = (0, _sister2['default'])();
         springSystem = stack.getSpringSystem();
         springThrowIn = springSystem.createSpring(250, 10);
-        springThrowOut = springSystem.createSpring(500, 20);
+        springThrowOut = springSystem.createSpring(100, 20);
         lastThrow = {};
         lastTranslate = {
             x: 0,
@@ -6228,7 +6228,8 @@ Card = function (stack, targetElement) {
 
         mc = new _hammerjs2['default'].Manager(targetElement, {
             recognizers: [[_hammerjs2['default'].Pan, {
-                threshold: 2
+                // threshold: 2
+                threshold: 0//see 6595
             }]]
         });
 
@@ -6511,8 +6512,8 @@ Card.makeConfig = function () {
         isThrowOut: Card.isThrowOut,
         throwOutConfidence: Card.throwOutConfidence,
         throwOutDistance: Card.throwOutDistance,
-        minThrowOutDistance: 400,
-        maxThrowOutDistance: 500,
+        minThrowOutDistance: 100,
+        maxThrowOutDistance: 100,
         rotation: Card.rotation,
         maxRotation: 20,
         transform: Card.transform
@@ -6587,7 +6588,11 @@ Card.throwOutConfidence = function (offset, element) {
  * @return {Boolean}
  */
 Card.isThrowOut = function (offset, element, throwOutConfidence) {
-    return throwOutConfidence === 1;
+    // return throwOutConfidence === 1;
+    return true;
+    //changed the confidence here to always be true because
+    //the offset space on mobile is so small that any lateral motion is
+    //presumably a throw out. was having difficulty establishing 'throwOutConfidence' before
 };
 
 /**

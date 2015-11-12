@@ -1,20 +1,53 @@
 angular.module('starter.controllers', [])
-
 .controller('CardCtrl', function($scope, ezfb, $window, $location) {
+//
+// var allLi = document.getElementsByTagName('li');
+//   ionic.off('click', function(){
+//
+//   }, allLi);
+/**
+//make a service to contain all of the right swipes
+//e.g.
+angular.module('starter.services')
+.service('StuffToDo', function($q){
+  var favorites = [];
+  this.addToFavorites = function(thingToDo){
+    favorites.push(thingToDo)
+  }
+
+  this.returnFavorites = function(){
+    return favorites;
+  }
+
+});
+**/
+    // $('.card').off('click');
+
+    // $('.card').css('pointerEvents', 'none')
 
 
-          $scope.throwoutleft = function (eventName, eventObject, index) {
-              console.log('throwoutleft', eventObject, index);
-              var objectToDestroy = eventObject.target;
-              angular.element(objectToDestroy).remove();
 
-          };
+  $scope.stabilize = function(e){
+    console.log(e);
+    e.preventDefault();
+    var elementToDisable = e.target;
+    elementToDisable.removeEventListener('click', e, false);
+    // debugger;
 
-          $scope.throwoutright = function (eventName, eventObject, index) {
-              console.log('throwoutright', eventObject, index);
-              var objectToDestroy = eventObject.target;
-              angular.element(objectToDestroy).remove();
-          };
+  };
+
+  $scope.throwoutleft = function (eventName, eventObject) {
+      console.log('throwoutleft', eventObject);
+      var objectToDestroy = eventObject.target;
+      angular.element(objectToDestroy).remove();
+
+  };
+
+  $scope.throwoutright = function (eventName, eventObject) {
+      console.log('throwoutright', eventObject);
+      var objectToDestroy = eventObject.target;
+      angular.element(objectToDestroy).remove();
+  };
 
   $scope.login = function () {
     FB.login(function (res) {
