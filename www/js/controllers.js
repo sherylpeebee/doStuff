@@ -1,6 +1,13 @@
 angular.module('starter.controllers', [])
-.controller('CardCtrl', function($scope, ezfb, $window, $location) {
-//
+.controller('CardCtrl', function($scope, ezfb, $window, $location, StuffToDo) {
+// StuffToDo.test();
+
+StuffToDo.search()
+.then(function(res){
+  console.log(res);
+})
+
+
 // var allLi = document.getElementsByTagName('li');
 //   ionic.off('click', function(){
 //

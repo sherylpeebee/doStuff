@@ -1,5 +1,24 @@
 angular.module('starter.services', [])
 
+.factory('StuffToDo', function(API_SERVER, $http, $q){
+  return{
+    test : function(){
+      console.log(API_SERVER);
+    },
+    search : function(){
+      var deferred = $q.defer();
+      $http.get(API_SERVER + '/yelpSearch?location=san+jose')
+      .then(function(data){
+        deferred.resolve(data);
+      })
+      .catch(function(error){
+        deferred.reject("no data available");
+      });
+      return deferred.promise;
+    }
+  };
+})
+
 .factory('Chats', function() {
   // Might use a resource here that returns a JSON array
 

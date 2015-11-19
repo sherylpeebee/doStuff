@@ -23,6 +23,8 @@ angular.module('starter', ['ionic','ionic.service.core', 'starter.controllers', 
   });
 })
 
+.constant('API_SERVER', 'http://localhost:8000')
+
 .config(function($stateProvider, $urlRouterProvider, ezfbProvider) {
 
   ezfbProvider.setLocale('zh_TW');//set fb locale with ezfb provider
